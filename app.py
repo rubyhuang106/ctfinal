@@ -170,7 +170,7 @@ def callback():
             if sm.count >= 3:
                 reply = "事不過三，心不誠則不靈。既然你如此不甘不願，那也不必強求。"
                 sm.count = 0
-                sm.switch_to_state1()
+                sm.states = 0
             else:
                 sm.count += 1
                 reply = "請輸入數字！"
