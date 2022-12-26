@@ -15,6 +15,7 @@ def send_text_message(reply_token, text):
     
 class state_machine():
     states = 0
+    count = 0
     dice_again = False
     
     def switch_to_state1(self):
@@ -28,6 +29,13 @@ class state_machine():
         
     def switch_to_dice(self):
         self.states = 4
+    
+    def switch_to_waiting(self):
+        self.states = 21
+        self.count += 1
+        
+    def clear_count(self):
+        self.count = 0
         
 
 """
