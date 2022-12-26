@@ -51,7 +51,7 @@ machine = GraphMachine(model=model, states=['idle', '選擇', '占卜', '改運'
                            {'trigger': "輸入", 'source': '選擇', 'dest': '改運', 'conditions': "改運"},
                            {'trigger': "輸入", 'source': '選擇', 'dest': '擲筊', 'conditions': "擲筊"},
                            {'trigger': "輸入", 'source': '改運', 'dest': '等待', 'conditions': "非數字"},
-                           {'trigger': "", 'source': '等待', 'dest': '選擇', 'conditions': "三次輸入非數字"},
+                           {'trigger': "", 'source': '等待', 'dest': 'idle', 'conditions': "三次輸入非數字"},
                            {'trigger': "輸入", 'source': '等待', 'dest': '改運', 'conditions': "數字"},
                            {'trigger': "結束", 'source': ['占卜', '改運', '擲筊'], 'dest': '選擇'}
                        ],

@@ -165,12 +165,15 @@ def callback():
                 sm.switch_to_state1()
             except:
                 sm.switch_to_waiting()
-                if sm.count >= 3:
-                    reply = "事不過三，心不誠則不靈。既然你如此不甘不願，那也不必強求。"
-                    sm.clear_count()
-                    sm.switch_to_state1()
-                else:
-                    reply = "請輸入數字！"
+                reply = "請輸入數字！"
+        elif sm.states == 21:
+            if sm.count >= 3:
+                reply = "事不過三，心不誠則不靈。既然你如此不甘不願，那也不必強求。"
+                sm.count = 0
+                sm.switch_to_state1()
+            else:
+                sm.count += 1
+                reply = "請輸入數字！"
         elif sm.states == 4:  #擲筊
             luck = random.randint(1, 101)
             if luck > 50:

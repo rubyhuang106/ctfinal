@@ -33,9 +33,10 @@ class state_machine():
     def switch_to_waiting(self):
         self.states = 21
         self.count += 1
+    
+    #def clear_count(self):
+        #self.count = 0
         
-    def clear_count(self):
-        self.count = 0
         
 
 """
